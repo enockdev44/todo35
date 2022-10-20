@@ -1,0 +1,39 @@
+<div>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>description</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of todo">
+                <td>{{ t.name }}</td>
+                <td>{{ t.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <button (click)="editTodo(t._id, t.name, t.description)">edit</button>
+                        </li>
+                        <li>
+                            <button (click)="deleteTodo(t._id, t.name, t.description)">delete</button>
+                        </li>
+                        <li>
+                            <input (change)="onSelectTodo(t)" [id]="'isCheckedTodoInput_'+t._id" type="checkbox">
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <td><button (click)="onDeleteManyTodo()">delete checked</button></td>
+                <td><button (click)="unSelectAllTodo()">uncheck all</button></td>
+                <td><button (click)="selectAllTodo()">check all</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

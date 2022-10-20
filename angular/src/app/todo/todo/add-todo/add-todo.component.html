@@ -1,0 +1,18 @@
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmitTodo(f)">
+    <div>
+        <label for="name">Name:</label>
+        <input maxlength="20" required id="name" #name="ngModel" [(ngModel)]="form.name" type="text" name="name">
+        <small class="form_error" *ngIf="name.errors && f.submitted">Name is required.</small>
+    </div>
+    <div>
+        <label for="description">Description:</label>
+        <input maxlength="50" required id="description" #description="ngModel" [(ngModel)]="form.description" type="text" name="description">
+        <small class="form_error" *ngIf="description.errors && f.submitted">Description is required.</small>
+    </div>
+    <div>
+        <input [disabled]="name.errors || description.errors" type="submit" value="save">
+    </div>
+    <div>
+        <small *ngIf="isTodoSaved" class="form_success">Todo was saved successfully!</small>
+    </div>
+</form>

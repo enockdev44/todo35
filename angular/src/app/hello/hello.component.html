@@ -1,0 +1,11 @@
+<h1>{{ title }}</h1>
+<p>{{message}}</p>
+
+<ul>
+    <li *ngFor="let friend of friends">{{ friend.getName() }}</li>
+</ul>
+
+<p>Conversations:</p>
+<ul style="list-style-type: square;">
+    <li *ngFor="let message of conversations">{{ message.sender }}: {{ message.message }}</li>
+</ul>
