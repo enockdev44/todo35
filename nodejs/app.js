@@ -181,12 +181,3 @@ app.post('/auth/login', (req, res) => {
 app.listen(port, () => {
     console.log('Server is running on localhost:', port);
 });
-
-/*
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/load', (req, res) => {
-    // `__dirname` contains the directory that this code is in.
-    res.sendFile(`${__dirname}\/multiple_langages.html`);
-});
-*/
